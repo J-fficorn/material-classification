@@ -25,6 +25,30 @@ limitations under the License.
   <link rel="icon" href="ai4all-nobg.png" type="image/png" sizes="16x16">
 </head>
 
+<style>
+  .pred-container {
+    margin-bottom: 20px;
+  }
+
+  .pred-container > div {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+  }
+
+  .row {
+    display: table-row;
+  }
+  .cell {
+    display: table-cell;
+    padding-right: 20px;
+  }
+
+  #file-container {
+    margin-bottom: 20px;
+  }
+</style>
+
 <body>
   <div class="tfjs-example-container">
     <section class='title-area'>
@@ -42,10 +66,10 @@ limitations under the License.
     <section>
       <p class='section-head'>Model</p>
       <div id="file-container" style="display: none">
-        <label for="images" class="drop-container" id="dropcontainer">
+        <label for="images" class="drop-container" id="file-container">
           <span class="drop-title">Drop files here</span>
           or
-          <input type="file" id="files" name = "files[]"accept="image/*" required multiple>
+          <input type="file" id="files" name = "files[]" multiple>
         </label>
       </div>
       <div id="status"></div>

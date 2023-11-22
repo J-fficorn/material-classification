@@ -1,0 +1,65 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Section heading styles */
+.section-head {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Container styles */
+.tfjs-example-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* File upload container */
+#file-container {
+  margin-bottom: 20px;
+}
+
+/* Prediction container */
+#predictions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .tfjs-example-container {
+    padding: 15px;
+  }
+}

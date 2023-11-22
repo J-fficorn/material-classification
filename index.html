@@ -18,10 +18,11 @@ limitations under the License.
 <!doctype html>
 
 <head>
-  <title>AI4ALL: Material Classification</title>
+  <title id="banner">MatClass: AI4ALL Model</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="matclass.css" />
+  <link rel="icon" href="ai4all-nobg.png" type="image/png" sizes="16x16">
 </head>
 
 <body>
@@ -32,23 +33,30 @@ limitations under the License.
 
     <section>
       <img src="dataset.png" style="width: 100%;">
-      <p class='section-head'>Description</p>
-      <p>
-        Upload an image and get a classification of materials! </br>
-        We classify 4 recyclable construction materials: glass, plastic, steel, and wood. 
+      <p class="body">
+        We classify any of the following 4 materials: glass, plastic, steel, and wood; these are commonly used in construction or recycled. </br>
+        Our model is trained to improve efficiency and safety for workers in these fields; test it out below!
       </p>
     </section>
     
     <section>
       <p class='section-head'>Model</p>
-      
       <div id="file-container" style="display: none">
-        Upload an image: <input type="file" id="files" name="files[]" multiple />
+        <label for="images" class="drop-container" id="dropcontainer">
+          <span class="drop-title">Drop files here</span>
+          or
+          <input type="file" id="files" name = "files[]"accept="image/*" required multiple>
+        </label>
       </div>
       <div id="status"></div>
       <div id="predictions"></div>
+    </section>
 
-      <img style="display: none" id="cat" src="ai4all.jpg" width=240 height=240 />
+    <section>
+      <p class='section-head'>
+        Made by Fadel, Jahliza, Layla, Lily, and Orion, AI4ALL 2022. </br>
+      </p>
+      <img id="logo" src="ai4all-nobg.png" width=240 height=240 />
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2"></script>

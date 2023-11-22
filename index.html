@@ -21,32 +21,8 @@ limitations under the License.
   <title>AI4ALL: Material Classification</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="shared/tfjs-examples.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
-<style>
-  .pred-container {
-    margin-bottom: 20px;
-  }
-
-  .pred-container > div {
-    display: inline-block;
-    margin-right: 20px;
-    vertical-align: top;
-  }
-
-  .row {
-    display: table-row;
-  }
-  .cell {
-    display: table-cell;
-    padding-right: 20px;
-  }
-
-  #file-container {
-    margin-bottom: 20px;
-  }
-</style>
 
 <body>
   <div class="tfjs-example-container">
@@ -58,13 +34,14 @@ limitations under the License.
       <img src="dataset.png" style="width: 100%;">
       <p class='section-head'>Description</p>
       <p>
-        We classify 4 categories of recyclable construction materials: glass, plastic, steel, and wood. 
+        Upload an image and get a classification of materials! </br>
+        We classify 4 recyclable construction materials: glass, plastic, steel, and wood. 
       </p>
     </section>
     
     <section>
-      <p class='section-head'>Model Output</p>
-
+      <p class='section-head'>Model</p>
+      
       <div id="file-container" style="display: none">
         Upload an image: <input type="file" id="files" name="files[]" multiple />
       </div>

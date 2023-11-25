@@ -16,12 +16,12 @@
  */
 const CLASSES_NAMES = {
   0: 'brown-glass',
-  1: 'plastic',
-  2: 'metal',
-  3: 'wood',
-  4: 'cardboard',
-  5: 'green-glass',
-  6: 'white-glass',
+  1: 'cardboard',
+  2: 'green-glass',
+  3: 'metal',
+  4: 'plastic',
+  5: 'white-glass',
+  6: 'wood',
  }
 
 const MOBILENET_MODEL_PATH =

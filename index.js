@@ -15,10 +15,13 @@
  * =============================================================================
  */
 const CLASSES_NAMES = {
-  0: 'glass',
+  0: 'brown-glass',
   1: 'plastic',
-  2: 'steel',
+  2: 'metal',
   3: 'wood',
+  4: 'cardboard',
+  5: 'green-glass',
+  6: 'white-glass',
  }
 
 const MOBILENET_MODEL_PATH =

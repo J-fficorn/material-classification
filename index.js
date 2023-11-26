@@ -35,7 +35,7 @@ let mobilenet;
 const mobilenetDemo = async () => {
   status('Loading model...');
 
-  mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH, {fromTFHub: true});
+  mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH);
   // mobilenet = await tf.loadLayersModel('model_tfjs/model.json');
 
   // Warmup the model. This isn't necessary, but makes the first prediction

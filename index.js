@@ -35,8 +35,8 @@ let mobilenet;
 const mobilenetDemo = async () => {
   status('Loading model...');
 
-  mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH);
-  // mobilenet = await tf.loadLayersModel('model_tfjs/model.json');
+  // mobilenet = await tf.loadGraphModel(MOBILENET_MODEL_PATH);
+  mobilenet = await tf.loadLayersModel('model_tfjs/model.json');
 
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
@@ -77,9 +77,9 @@ async function predict(imgElement) {
     // tf.browser.fromPixels() returns a Tensor from an image element.
     const img = tf.cast(tf.browser.fromPixels(imgElement), 'float32');
 
-    const offset = tf.scalar(127.5);
+    const offset = tf.scalar(255);
     // Normalize the image from [0, 255] to [-1, 1].
-    const normalized = img.sub(offset).div(offset);
+    const normalized = img.div(offset);
 
     // Reshape to a single-element batch so we can pass it to predict.
     const batched = normalized.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 3]);

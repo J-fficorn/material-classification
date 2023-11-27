@@ -75,16 +75,20 @@ async function predict(imgElement) {
   let startTime2;
   const logits = tf.tidy(() => {
     // tf.browser.fromPixels() returns a Tensor from an image element.
-    const img = tf.cast(tf.browser.fromPixels(imgElement), 'float64');
+    const img = tf.browser.fromPixels(imgElement)
+                .resizeNearestNeighbor([IMAGE_SIZE, IMAGE_SIZE])
+                .toFloat()
+                .div(tf.scalar(255))
+                .expandDims();
     // Normalize the image from [0, 255] to [-1, 1].
-    const normalized = img.div(tf.scalar(255));
+    // const normalized = img.div(tf.scalar(255));
 
     // Reshape to a single-element batch so we can pass it to predict.
     // const batched = normalized.reshape([1, IMAGE_SIZE, IMAGE_SIZE, 3]);
 
     startTime2 = performance.now();
     // Make a prediction through mobilenet.
-    return mobilenet.predict(normalized);
+    return mobilenet.predict(img);
   });
 
   // Convert logits to probabilities and class names.
